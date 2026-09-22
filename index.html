@@ -39,24 +39,11 @@
     <main id="top" class="container content">
       <section id="about" class="section">
         <h2>About Me</h2>
-        <figure class="avatar profile-gallery">
+        <figure class="avatar">
           <img
-            id="profile-photo"
             src="./profile-images/main2.png"
             alt="Portrait of Simone Facchiano at Max Planck"
           >
-          <button
-            class="profile-gallery-button profile-gallery-button-prev"
-            type="button"
-            aria-label="Show previous profile photo"
-            data-profile-direction="-1"
-          ></button>
-          <button
-            class="profile-gallery-button profile-gallery-button-next"
-            type="button"
-            aria-label="Show next profile photo"
-            data-profile-direction="1"
-          ></button>
         </figure>
 
         <p>
@@ -182,6 +169,14 @@
         <ul class="publications">
           <li>
             <p>
+              <strong>Simone Facchiano</strong>, Jan Eric Lenssen, Wolfgang Stammer, Bernt Schiele,
+              Fabio Galasso, Jonas Fischer.
+              <em>Steering Fields: Adaptive Vector Fields for Safe Image Generation and Beyond</em>.
+              Soon on arXiv.
+            </p>
+          </li>
+          <li>
+            <p>
               <strong>Simone Facchiano</strong>, Stefano Saravalle, Matteo Migliarini, Edoardo De Matteis,
               Alessio Sampieri, Andrea Pilzer, Emanuele Rodolà, Indro Spinelli, Luca Franco, Fabio Galasso.
               <a href="https://arxiv.org/abs/2506.07891" target="_blank" rel="noreferrer"><em>Video Unlearning via Low-Rank Refusal Vector</em></a>.
@@ -257,29 +252,6 @@
         </ul>
       </section>
 
-      <section id="collaborations" class="section">
-        <h2>Selected Collaborations</h2>
-        <p>
-          Selected research environments, labs, and industry-facing collaborations connected to my work.
-        </p>
-        <div class="logo-grid" aria-label="Collaboration logos">
-          <a href="https://www.nvidia.com/" target="_blank" rel="noreferrer" aria-label="NVIDIA">
-            <img src="./logos/nvidia.png" alt="NVIDIA logo">
-          </a>
-          <a href="https://www.italai.org/" target="_blank" rel="noreferrer" aria-label="ItalAI">
-            <img src="./logos/italAI.png" alt="ItalAI logo">
-          </a>
-          <a href="https://www.pinlab.org/" target="_blank" rel="noreferrer" aria-label="PINLab">
-            <img src="./logos/PINlab%20logo%20scritta.jpeg" alt="PINLab logo">
-          </a>
-          <a href="https://gladia.di.uniroma1.it/" target="_blank" rel="noreferrer" aria-label="GLADIA">
-            <img src="./logos/gladia.png" alt="GLADIA logo">
-          </a>
-          <span aria-label="OmnAI">
-            <img src="./logos/omnai.png" alt="OmnAI logo">
-          </span>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
@@ -291,53 +263,6 @@
     </footer>
     <div class="copy-toast" role="status" aria-live="polite">Email copied</div>
     <script>
-      const profilePhotos = [
-        {
-          src: "./profile-images/main2.png",
-          alt: "Portrait of Simone Facchiano at Max Planck",
-          position: "48% 22%",
-        },
-        {
-          src: "./images/pic2.JPG",
-          alt: "Portrait of Simone Facchiano at Sapienza University of Rome",
-          position: "50% 50%",
-        },
-        {
-          src: "./images/pic3.JPG",
-          alt: "Simone Facchiano holding an Outstanding Graduate certificate",
-          position: "48% 42%",
-        },
-      ];
-
-      const profilePhoto = document.getElementById("profile-photo");
-      const profileButtons = document.querySelectorAll("[data-profile-direction]");
-      let currentProfilePhotoIndex = 0;
-
-      profilePhotos.forEach((photo) => {
-        const image = new Image();
-        image.src = photo.src;
-      });
-
-      function showProfilePhoto(nextIndex) {
-        if (!profilePhoto) {
-          return;
-        }
-
-        currentProfilePhotoIndex =
-          (nextIndex + profilePhotos.length) % profilePhotos.length;
-        const photo = profilePhotos[currentProfilePhotoIndex];
-        profilePhoto.src = photo.src;
-        profilePhoto.alt = photo.alt;
-        profilePhoto.style.objectPosition = photo.position;
-      }
-
-      profileButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const direction = Number(button.getAttribute("data-profile-direction"));
-          showProfilePhoto(currentProfilePhotoIndex + direction);
-        });
-      });
-
       const copyToast = document.querySelector(".copy-toast");
       let copyToastTimeout;
 

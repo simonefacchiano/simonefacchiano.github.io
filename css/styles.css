@@ -152,10 +152,6 @@ em.neutral-emphasis {
   float: right;
   width: 210px;
   margin: 2px 0 16px 28px;
-}
-
-.profile-gallery {
-  position: relative;
   aspect-ratio: 4 / 5;
   border: 1px solid var(--border);
   border-radius: 3px;
@@ -170,60 +166,6 @@ em.neutral-emphasis {
   height: 100%;
   object-fit: cover;
   object-position: 48% 22%;
-}
-
-.profile-gallery-button {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  width: 24px;
-  height: 34px;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(-50%);
-  transition: opacity 160ms ease;
-}
-
-.profile-gallery-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 9px;
-  height: 9px;
-  border-top: 1.5px solid #ffffff;
-  border-right: 1.5px solid #ffffff;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
-}
-
-.profile-gallery-button-prev {
-  left: 5px;
-}
-
-.profile-gallery-button-prev::before {
-  left: 8px;
-  transform: translateY(-50%) rotate(-135deg);
-}
-
-.profile-gallery-button-next {
-  right: 5px;
-}
-
-.profile-gallery-button-next::before {
-  right: 8px;
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.profile-gallery:hover .profile-gallery-button,
-.profile-gallery:focus-within .profile-gallery-button {
-  opacity: 0.72;
-}
-
-.profile-gallery-button:hover,
-.profile-gallery-button:focus {
-  opacity: 1;
-  outline: none;
 }
 
 .contact-line {
